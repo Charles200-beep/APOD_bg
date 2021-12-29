@@ -1,0 +1,2 @@
+C:\Users\charl\source\repos\APOD_bg\APOD_bg\bin\Release\netcoreapp3.1\win-x64\publish\APOD_bg.pdb
+C:\Users\charl\source\repos\APOD_bg\APOD_bg\bin\Release\netcoreapp3.1\win-x64\publish\APOD_bg.exe

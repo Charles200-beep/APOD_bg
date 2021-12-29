@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "RjXUPJq1/xULIqOETDoHeKUqUgEqoD+7X+/BMHPxHRWZu03Zh9nCnwEEo8WXsSabRFudJPVwY05E5QfDqKRPsg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\charl\\source\\repos\\APOD_bg\\APOD_bg\\APOD_bg.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\charl\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
