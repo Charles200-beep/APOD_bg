@@ -17,61 +17,13 @@ namespace APOD_bg
         public Form1()
         {
             InitializeComponent();
-            switch (Properties.Settings.Default.Display_mode)
-            {
-                case 0:
-                    TiledRadio.Checked = true;
-                    Wallpaper.style = 0;
-                    break;
-                case 1:
-                    CenteredRadio.Checked = true;
-                    Wallpaper.style = 1;
-                    break;
-                case 2:
-                    StretchedRadio.Checked = true;
-                    Wallpaper.style = 2;
-                    break;
-                default:
-                    CenteredRadio.Checked = true;
-                    Wallpaper.style = 1;
-                    break;
-            }
-            dateTimePicker1.Enabled = false;
-            dateTimePicker1.Value = Properties.Settings.Default.Selected_date_full;
-            currentDateCheckbox.Checked = Properties.Settings.Default.Use_Current_Date;
-            if (Properties.Settings.Default.Use_Current_Date)
-            {
-                dateTimePicker1.Enabled = false;
-            }
-            else
-            {
-                dateTimePicker1.Enabled = true;
-            }
-            timer1.Interval = Properties.Settings.Default.Delay * 3600000;
-            numericUpDown1.Value = Properties.Settings.Default.Delay;
-            timer1.Enabled = Properties.Settings.Default.Enable_Disable;
-            checkBox1.Checked = Properties.Settings.Default.Enable_Disable;
-            textBox1.Text = Properties.Settings.Default.API_Key;
-            if (Properties.Settings.Default.First_Run)
-            {
-                Properties.Settings.Default.Selected_date = DateTime.Now.ToString();
-                Properties.Settings.Default.First_Run = false;
-            }
-            if (Properties.Settings.Default.Use_Current_Date)
-            {
-                string date = DateTime.Now.ToString();
-                Wallpaper.URL = "https://api.nasa.gov/planetary/apod?api_key=" + Properties.Settings.Default.API_Key + "&date=" + date.Substring(0, 10);
-            }
-            else
-            {
-                Wallpaper.URL = "https://api.nasa.gov/planetary/apod?api_key=" + Properties.Settings.Default.API_Key + "&date=" + Properties.Settings.Default.Selected_date;
-            }
+            setSettings();
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
             //Wallpaper.downloadSetWallpaper(Constants.APIKey);
-            this.backgroundWorker1.RunWorkerAsync();
+            backgroundWorker1.RunWorkerAsync();
             
         }
 
@@ -183,8 +135,65 @@ namespace APOD_bg
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.linkLabel1.LinkVisited = true;
-            System.Diagnostics.Process.Start("https://api.nasa.gov/");
+            linkLabel1.LinkVisited = true;
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://api.nasa.gov/",
+                UseShellExecute = true
+            });
+        }
+
+        private void setSettings()
+        {
+            switch (Properties.Settings.Default.Display_mode)
+            {
+                case 0:
+                    TiledRadio.Checked = true;
+                    Wallpaper.style = 0;
+                    break;
+                case 1:
+                    CenteredRadio.Checked = true;
+                    Wallpaper.style = 1;
+                    break;
+                case 2:
+                    StretchedRadio.Checked = true;
+                    Wallpaper.style = 2;
+                    break;
+                default:
+                    CenteredRadio.Checked = true;
+                    Wallpaper.style = 1;
+                    break;
+            }
+            dateTimePicker1.Enabled = false;
+            dateTimePicker1.Value = Properties.Settings.Default.Selected_date_full;
+            currentDateCheckbox.Checked = Properties.Settings.Default.Use_Current_Date;
+            if (Properties.Settings.Default.Use_Current_Date)
+            {
+                dateTimePicker1.Enabled = false;
+            }
+            else
+            {
+                dateTimePicker1.Enabled = true;
+            }
+            timer1.Interval = Properties.Settings.Default.Delay * 3600000;
+            numericUpDown1.Value = Properties.Settings.Default.Delay;
+            timer1.Enabled = Properties.Settings.Default.Enable_Disable;
+            checkBox1.Checked = Properties.Settings.Default.Enable_Disable;
+            textBox1.Text = Properties.Settings.Default.API_Key;
+            if (Properties.Settings.Default.First_Run)
+            {
+                Properties.Settings.Default.Selected_date = DateTime.Now.ToString();
+                Properties.Settings.Default.First_Run = false;
+            }
+            if (Properties.Settings.Default.Use_Current_Date)
+            {
+                string date = DateTime.Now.ToString();
+                Wallpaper.URL = "https://api.nasa.gov/planetary/apod?api_key=" + Properties.Settings.Default.API_Key + "&date=" + date.Substring(0, 10);
+            }
+            else
+            {
+                Wallpaper.URL = "https://api.nasa.gov/planetary/apod?api_key=" + Properties.Settings.Default.API_Key + "&date=" + Properties.Settings.Default.Selected_date;
+            }
         }
     }
 }

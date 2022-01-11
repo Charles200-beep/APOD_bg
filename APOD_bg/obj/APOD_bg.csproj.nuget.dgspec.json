@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\charl\\source\\repos\\APOD_bg\\APOD_bg\\APOD_bg.csproj": {}
+    "C:\\Users\\charl\\Documents\\GitHub\\APOD_bg\\APOD_bg\\APOD_bg.csproj": {}
   },
   "projects": {
-    "C:\\Users\\charl\\source\\repos\\APOD_bg\\APOD_bg\\APOD_bg.csproj": {
+    "C:\\Users\\charl\\Documents\\GitHub\\APOD_bg\\APOD_bg\\APOD_bg.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\charl\\source\\repos\\APOD_bg\\APOD_bg\\APOD_bg.csproj",
+        "projectUniqueName": "C:\\Users\\charl\\Documents\\GitHub\\APOD_bg\\APOD_bg\\APOD_bg.csproj",
         "projectName": "APOD_bg",
-        "projectPath": "C:\\Users\\charl\\source\\repos\\APOD_bg\\APOD_bg\\APOD_bg.csproj",
+        "projectPath": "C:\\Users\\charl\\Documents\\GitHub\\APOD_bg\\APOD_bg\\APOD_bg.csproj",
         "packagesPath": "C:\\Users\\charl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\charl\\source\\repos\\APOD_bg\\APOD_bg\\obj\\",
+        "outputPath": "C:\\Users\\charl\\Documents\\GitHub\\APOD_bg\\APOD_bg\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
